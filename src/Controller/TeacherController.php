@@ -16,14 +16,9 @@ class TeacherController extends AbstractController
         ]);
     }
 
-    #[Route('/showTeacher/{name}')]
-    public function name($name){
-        return new Response("hello  " . $name);
-    }
-
-    #[Route('/teacher2')]
-    public function index2(): Response
+    #[Route('/gotostudent', name: 'app_teacherGo')]
+    public function GoToStudent()
     {
-        return $this->redirectToRoute('appStudent');
+        return $this->redirectToRoute('app_student');
     }
 }
